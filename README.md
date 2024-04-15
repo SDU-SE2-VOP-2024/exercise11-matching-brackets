@@ -2,33 +2,46 @@
 
 ## Tasks
 
-In this exercise you are tasked within creating a program that can evaluate whether there is a balance within a string
-of brackets. An example of this is `[{}]` where there are equally many opening brackets as there are closing.
-`[{()]` is an example of no balance between the brackets as we are missing one.
+In this exercise you are tasked with creating a program that can evaluate whether there is a balance of brackets
+contained in a string.
+An example of this is `[{}]` where there are equally many opening brackets as there are closing.
+`[{()]` is an example of no balance between the brackets, as there is a missing closing curly bracket.
 
 ### Task 1
 
 Implement the `checkBrackets` method.
+The method must be able to check if a string contains a balanced amount of open/closing brackets.
+Example:
+> `–{ [b ⋅ b – (4 ⋅ a ⋅ c ) ] / (2 ⋅ a }`
+> This string should give a `false` value.
 
-To see whether an expression of the form “`–{ [b ⋅ b – (4 ⋅ a ⋅ c ) ] / (2 ⋅ a) }`” is correctly formed, place the
-parentheses onto a `Stack<Character>`:
+A `Stack<Character>` can be used to check for balanced brackets:
 
 - When you see an opening parenthesis, push it on the stack.
 - When you see a closing parenthesis, pop the stack.
-  - If the opening and closing parentheses don’t match - the parentheses are unbalanced.
-  - If at the end the stack is empty - the parentheses are balanced.
+    - If the opening and closing parentheses don’t match - the parentheses are unbalanced.
+    - If at the end the stack is empty - the parentheses are balanced.
 
-`Hint: consider using some smart way of switching the known brackets`
+`Hint: Consider making it easy to change supported brackets types.`
 
 ### Task 2
 
-- Use a `List<Character>` instead of a `Stack` - remember that values should be inserted and retrieved in a **LIFO** (Last In, First Out) manner. 
-    - You are free to create a new class for this purpose, if you don't want to overwrite the existing one. In this class you need to implement another `checkBrackets`-method.
+> **Goal**
+> Use a List structure rather than a Stack.
 
-`Hint: when adding to a specific index in a list, you push aside what is already there`
+It is important to maintain the **LIFO** (Last In, First Out) approach, when inserting and retrieving values.
+As you can imagine this will require some logic which is otherwise built into a Stack.
+
+You are free to create a new class for this purpose, if you don't want to overwrite the existing one. In this
+class you need to implement another `checkBrackets`-method.
+
+> Hint: The `List` interface has a method to insert elements a specific index.  
+> [See List documentation](https://docs.oracle.com/javase/8/docs/api/java/util/List.html)
 
 ![stack](assets/stack.png)
 
 ### Bonus Task
+
 For an added challenge:
+
 - The main method should now take a file as an input, instead of input from the keyboard.

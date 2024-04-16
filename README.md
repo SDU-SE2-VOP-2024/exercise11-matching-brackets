@@ -1,3 +1,13 @@
+# **Alternative Solutions for** Matching Brackets
+
+Here is an **alternative** solution for Matching Brackets.  
+There are many ways to solve these tasks, and here is presented one possible solution.
+When looking a these try to understand what has been done, and how the solution compares to
+your solution or your thoughts of possible solutions.
+It is great to be inspired especially if stuck, but try to get as much learning from this as possible.
+
+Switch to `solutions` branch to view another implementation.
+
 # Matching Brackets
 
 ## Tasks

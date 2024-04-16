@@ -1,7 +1,6 @@
 package task1;
 
-import java.util.Scanner;
-import java.util.Stack;
+import java.util.*;
 
 public class MatchingBrackets {
 
@@ -29,6 +28,29 @@ public class MatchingBrackets {
      * {@code false} If there is not a balanced amount of brackets.
      */
     public static boolean checkBrackets(final String expression) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        Stack<Character> stack = new Stack<>();
+
+        char[] chars = expression.toCharArray();
+        Character[] closeBracket = { '}',  ']', ')'};
+        ArrayList<Character> closingBrackets = new ArrayList<>(List.of(closeBracket));
+        Character[] openBracket = { '{',  '[', '('};
+        ArrayList<Character> openingBrackets = new ArrayList<>(List.of(openBracket));
+
+        for (Character c: chars) {
+            if (openingBrackets.contains(c)) {
+                stack.push(c);
+            } else if (closingBrackets.contains(c)) {
+                if (stack.isEmpty()) {
+                    System.out.println("Not balanced.");
+                    return false;
+                }
+                char open = stack.pop();
+                if((closingBrackets.indexOf(c) != openingBrackets.indexOf(open))) {
+                    System.out.println("Not balanced.");
+                    return false;
+                }
+            }
+        }
+        return stack.isEmpty();
     }
 }

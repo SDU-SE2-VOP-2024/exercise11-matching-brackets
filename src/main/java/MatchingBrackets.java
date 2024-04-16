@@ -12,7 +12,7 @@ public class MatchingBrackets {
 
             if (expression.equalsIgnoreCase("q")) return; // Guard clause. Stop execution.
 
-            final boolean bracketsBalanced = MatchingBrackets.ckeckBrackets(expression);
+            final boolean bracketsBalanced = MatchingBrackets.checkBrackets(expression);
 
             System.out.printf("'%s' has balanced brackets: %b\n", expression, bracketsBalanced);
         }
@@ -27,7 +27,7 @@ public class MatchingBrackets {
      * @return {@code true} If there is a balanced amount brackets.
      * {@code false} If there is not a balanced amount of brackets.
      */
-    public static boolean ckeckBrackets(final String expression) {
+    public static boolean checkBrackets(final String expression) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 }

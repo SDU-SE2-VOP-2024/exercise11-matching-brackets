@@ -11,7 +11,8 @@ public class MatchingBrackets {
             // This is a way to create an immutable Map of key value pairs.
             entry('{', '}'),
             entry('[', ']'),
-            entry('(', ')')
+            entry('(', ')'),
+            entry('<', '>')
     );
 
     public static void main(final String[] args) {

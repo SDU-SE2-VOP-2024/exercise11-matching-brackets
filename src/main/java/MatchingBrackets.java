@@ -5,12 +5,11 @@ public class MatchingBrackets {
 
     public static void main(final String[] args) {
         final Scanner input = new Scanner(System.in);
-        String expression = "";
         while (true) {
             System.out.print("Enter an expression with { [ ( ) ] }: ('q' to stop): ");
-            expression = input.nextLine();
+            final String expression = input.nextLine();
 
-            if (expression.equalsIgnoreCase("q")) return; // Guard clause. Stop execution.
+            if (expression.trim().equalsIgnoreCase("q")) return; // Guard clause. Stop execution.
 
             final boolean bracketsBalanced = MatchingBrackets.checkBrackets(expression);
 
@@ -21,7 +20,7 @@ public class MatchingBrackets {
 
 
     /**
-     * Method to check if a {@link String} contains equal amounts of openning/closed brackets.
+     * Method to check if a {@link String} contains equal amounts of opening/closing brackets.
      *
      * @param expression The expression to check for balanced brackets.
      * @return {@code true} If there is a balanced amount brackets.
